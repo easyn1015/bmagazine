@@ -150,81 +150,18 @@ $(document).ready(function () {
 
 
     // show/hide    
-
-    checkVisibility('.latest h1');
-    $(window).on('scroll resize', function () {
-        checkVisibility('.latest h1');
+    $(window).on('scroll resize', function (e) {
+        var lastScroll = 0;
+        var scrollTop = $(this).scrollTop();
+        if(scrollTop > lastScroll) {
+            checkVisibility('.latest h1, .latestCover li, .hotIssue h1, .bcast .bcastImage, .bcast p, .bcast .ani_box, .bcast .btnmore, .bestBcast h1, .bcastList li, .special h1, .special .spec_content img, .video, .issueImg .issueImg2, .brandJournal h1, .journal_text');
+        } else {
+            checkVisibility();
+        }
     });
 
-    checkVisibility('.latestCover li');
-    $(window).on('scroll resize', function () {
-        checkVisibility('.latestCover li');
-    });
 
 
-    checkVisibility('.hotIssue h1');
-    $(window).on('scroll resize', function () {
-        checkVisibility('.hotIssue h1');
-    });
-
-    checkVisibility('.bcast .bcastImage');
-    $(window).on('scroll resize', function () {
-        checkVisibility('.bcast .bcastImage');
-    });
-
-    checkVisibility('.bcast p');
-    $(window).on('scroll resize', function () {
-        checkVisibility('.bcast p');
-    });
-
-    checkVisibility('.bcast .ani_box');
-    $(window).on('scroll resize', function () {
-        checkVisibility('.bcast .ani_box');
-    });
-
-    checkVisibility('.bcast .btnmore');
-    $(window).on('scroll resize', function () {
-        checkVisibility('.bcast .btnmore');
-    });
-
-    checkVisibility('.bestBcast h1');
-    $(window).on('scroll resize', function () {
-        checkVisibility('.bestBcast h1');
-    });
-
-    checkVisibility('.bcastList li');
-    $(window).on('scroll resize', function () {
-        checkVisibility('.bcastList li');
-    });
-
-    checkVisibility('.special h1');
-    $(window).on('scroll resize', function () {
-        checkVisibility('.special h1');
-    });
-
-    checkVisibility('.special .spec_content img');
-    $(window).on('scroll resize', function () {
-        checkVisibility('.special .spec_content img');
-    });
-
-    checkVisibility('.video');
-    $(window).on('scroll resize', function () {
-        checkVisibility('.video');
-    });
-
-    checkVisibility('.issueImg .issueImg2');
-    $(window).on('scroll resize', function () {
-        checkVisibility('.issueImg .issueImg2');
-    });    
-    
-    checkVisibility('.brandJournal h1');
-    $(window).on('scroll resize', function () {
-        checkVisibility('.brandJournal h1');
-    });
-    checkVisibility('.journal_text');
-    $(window).on('scroll resize', function () {
-        checkVisibility('.journal_text');
-    });    
 
     function checkVisibility(selector) {
         var scrollTop = $(document).scrollTop();
